@@ -417,55 +417,55 @@
 				'webhook url',
 				'webhookurl'
 			]
-		},
-		{
-			id: 'about',
-			title: 'About',
-			keywords: [
-				'about app',
-				'about me',
-				'about open webui',
-				'about page',
-				'about us',
-				'aboutapp',
-				'aboutme',
-				'aboutopenwebui',
-				'aboutpage',
-				'aboutus',
-				'check for updates',
-				'checkforupdates',
-				'contact',
-				'copyright',
-				'details',
-				'discord',
-				'documentation',
-				'github',
-				'help',
-				'information',
-				'license',
-				'redistributions',
-				'release',
-				'see whats new',
-				'seewhatsnew',
-				'settings',
-				'software info',
-				'softwareinfo',
-				'support',
-				'terms and conditions',
-				'terms of use',
-				'termsandconditions',
-				'termsofuse',
-				'timothy jae ryang baek',
-				'timothy j baek',
-				'timothyjaeryangbaek',
-				'timothyjbaek',
-				'twitter',
-				'update info',
-				'updateinfo',
-				'version info',
-				'versioninfo'
-			]
-		}
+		} //,
+		//{
+		//	id: 'about',
+		//	title: 'About',
+		//	keywords: [
+		//		'about app',
+		//		'about me',
+		//		'about open webui',
+		//		'about page',
+		//		'about us',
+		//		'aboutapp',
+		//		'aboutme',
+		//		'aboutopenwebui',
+		//		'aboutpage',
+		//		'aboutus',
+		//		'check for updates',
+		//		'checkforupdates',
+		//		'contact',
+		//		'copyright',
+		//		'details',
+		//		'discord',
+		//		'documentation',
+		//		'github',
+		//		'help',
+		//		'information',
+		//		'license',
+		//		'redistributions',
+		//		'release',
+		//		'see whats new',
+		//		'seewhatsnew',
+		//		'settings',
+		//		'software info',
+		//		'softwareinfo',
+		//		'support',
+		//		'terms and conditions',
+		//		'terms of use',
+		//		'termsandconditions',
+		//		'termsofuse',
+		//		'timothy jae ryang baek',
+		//		'timothy j baek',
+		//		'timothyjaeryangbaek',
+		//		'timothyjbaek',
+		//		'twitter',
+		//		'update info',
+		//		'updateinfo',
+		//		'version info',
+		//		'versioninfo'
+		//	]
+		//}
 	];
 
 	let availableSettings = [];
@@ -581,9 +581,9 @@
 </script>
 
 <Modal size="2xl" bind:show>
-	<div class="text-gray-700 dark:text-gray-100 mx-1">
+	<div class="mx-1 text-gray-700 dark:text-gray-100">
 		<div class=" flex justify-between dark:text-gray-300 px-4 md:px-4.5 pt-4.5 pb-0.5 md:pb-2.5">
-			<div class=" text-lg font-medium self-center">{$i18n.t('Settings')}</div>
+			<div class="self-center text-lg font-medium ">{$i18n.t('Settings')}</div>
 			<button
 				aria-label={$i18n.t('Close settings modal')}
 				class="self-center"
@@ -595,7 +595,7 @@
 			</button>
 		</div>
 
-		<div class="flex flex-col md:flex-row w-full pt-1 pb-4">
+		<div class="flex flex-col w-full pt-1 pb-4 md:flex-row">
 			<div
 				role="tablist"
 				id="settings-tabs-container"
@@ -605,7 +605,7 @@
 					class="hidden md:flex w-full rounded-full px-2.5 gap-2 bg-gray-100/80 dark:bg-gray-850/80 backdrop-blur-2xl my-1 mb-1.5"
 					id="settings-search"
 				>
-					<div class="self-center rounded-l-xl bg-transparent">
+					<div class="self-center bg-transparent rounded-l-xl">
 						<Search
 							className="size-3.5"
 							strokeWidth={($settings?.highContrastMode ?? false) ? '3' : '1.5'}
@@ -642,10 +642,10 @@
 									selectedTab = 'general';
 								}}
 							>
-								<div class=" self-center mr-2">
+								<div class="self-center mr-2 ">
 									<SettingsAlt strokeWidth="2" />
 								</div>
-								<div class=" self-center">{$i18n.t('General')}</div>
+								<div class="self-center ">{$i18n.t('General')}</div>
 							</button>
 						{:else if tabId === 'interface'}
 							<button
@@ -666,10 +666,10 @@
 									selectedTab = 'interface';
 								}}
 							>
-								<div class=" self-center mr-2">
+								<div class="self-center mr-2 ">
 									<AppNotification strokeWidth="2" />
 								</div>
-								<div class=" self-center">{$i18n.t('Interface')}</div>
+								<div class="self-center ">{$i18n.t('Interface')}</div>
 							</button>
 						{:else if tabId === 'connections'}
 							{#if $user?.role === 'admin' || ($user?.role === 'user' && $config?.features?.enable_direct_connections)}
@@ -691,10 +691,10 @@
 										selectedTab = 'connections';
 									}}
 								>
-									<div class=" self-center mr-2">
+									<div class="self-center mr-2 ">
 										<Link strokeWidth="2" />
 									</div>
-									<div class=" self-center">{$i18n.t('Connections')}</div>
+									<div class="self-center ">{$i18n.t('Connections')}</div>
 								</button>
 							{/if}
 						{:else if tabId === 'tools'}
@@ -717,10 +717,10 @@
 										selectedTab = 'tools';
 									}}
 								>
-									<div class=" self-center mr-2">
+									<div class="self-center mr-2 ">
 										<WrenchAlt strokeWidth="2" />
 									</div>
-									<div class=" self-center">{$i18n.t('External Tools')}</div>
+									<div class="self-center ">{$i18n.t('External Tools')}</div>
 								</button>
 							{/if}
 						{:else if tabId === 'personalization'}
@@ -742,10 +742,10 @@
 									selectedTab = 'personalization';
 								}}
 							>
-								<div class=" self-center mr-2">
+								<div class="self-center mr-2 ">
 									<Face strokeWidth="2" />
 								</div>
-								<div class=" self-center">{$i18n.t('Personalization')}</div>
+								<div class="self-center ">{$i18n.t('Personalization')}</div>
 							</button>
 						{:else if tabId === 'audio'}
 							<button
@@ -766,10 +766,10 @@
 									selectedTab = 'audio';
 								}}
 							>
-								<div class=" self-center mr-2">
+								<div class="self-center mr-2 ">
 									<SoundHigh strokeWidth="2" />
 								</div>
-								<div class=" self-center">{$i18n.t('Audio')}</div>
+								<div class="self-center ">{$i18n.t('Audio')}</div>
 							</button>
 						{:else if tabId === 'data_controls'}
 							<button
@@ -790,10 +790,10 @@
 									selectedTab = 'data_controls';
 								}}
 							>
-								<div class=" self-center mr-2">
+								<div class="self-center mr-2 ">
 									<DatabaseSettings strokeWidth="2" />
 								</div>
-								<div class=" self-center">{$i18n.t('Data Controls')}</div>
+								<div class="self-center ">{$i18n.t('Data Controls')}</div>
 							</button>
 						{:else if tabId === 'account'}
 							<button
@@ -814,10 +814,10 @@
 									selectedTab = 'account';
 								}}
 							>
-								<div class=" self-center mr-2">
+								<div class="self-center mr-2 ">
 									<UserCircle strokeWidth="2" />
 								</div>
-								<div class=" self-center">{$i18n.t('Account')}</div>
+								<div class="self-center ">{$i18n.t('Account')}</div>
 							</button>
 						{:else if tabId === 'about'}
 							<button
@@ -838,15 +838,15 @@
 									selectedTab = 'about';
 								}}
 							>
-								<div class=" self-center mr-2">
+								<div class="self-center mr-2 ">
 									<InfoCircle strokeWidth="2" />
 								</div>
-								<div class=" self-center">{$i18n.t('About')}</div>
+								<div class="self-center ">{$i18n.t('About')}</div>
 							</button>
 						{/if}
 					{/each}
 				{:else}
-					<div class="text-center text-gray-500 mt-4">
+					<div class="mt-4 text-center text-gray-500">
 						{$i18n.t('No results found')}
 					</div>
 				{/if}
@@ -862,10 +862,10 @@
 							show = false;
 						}}
 					>
-						<div class=" self-center mr-2">
+						<div class="self-center mr-2 ">
 							<UserBadgeCheck strokeWidth="2" />
 						</div>
-						<div class=" self-center">{$i18n.t('Admin Settings')}</div>
+						<div class="self-center ">{$i18n.t('Admin Settings')}</div>
 					</a>
 				{/if}
 			</div>
