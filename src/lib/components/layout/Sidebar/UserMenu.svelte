@@ -283,7 +283,7 @@
 				<hr class=" border-gray-50/30 dark:border-gray-800/30 my-1 p-0" />
 
 				<!-- {$i18n.t('Help')} -->
-
+				<!-- COMENTADO
 				{#if $user?.role === 'admin'}
 					<DropdownMenu.Item
 						as="a"
@@ -298,8 +298,10 @@
 						<QuestionMarkCircle className="size-5" />
 						<div class="flex items-center">{$i18n.t('Documentation')}</div>
 					</DropdownMenu.Item>
+					-->
 
 					<!-- Releases -->
+					<!-- COMENTADO
 					<DropdownMenu.Item
 						as="a"
 						target="_blank"
@@ -313,6 +315,7 @@
 						<Map className="size-5" />
 						<div class="flex items-center">{$i18n.t('Releases')}</div>
 					</DropdownMenu.Item>
+					-->
 				{/if}
 
 				<DropdownMenu.Item

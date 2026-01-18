@@ -221,7 +221,7 @@
 			}}
 		/>
 
-		<div class="flex justify-between items-center">
+		<div class="flex items-center justify-between">
 			<div class="flex items-center md:self-center text-xl font-medium px-0.5 gap-2 shrink-0">
 				<div>
 					{$i18n.t('Tools')}
@@ -240,7 +240,7 @@
 							toolsImportInputElement.click();
 						}}
 					>
-						<div class=" self-center font-medium line-clamp-1">
+						<div class="self-center font-medium line-clamp-1">
 							{$i18n.t('Import')}
 						</div>
 					</button>
@@ -263,7 +263,7 @@
 							}
 						}}
 					>
-						<div class=" self-center font-medium line-clamp-1">
+						<div class="self-center font-medium line-clamp-1">
 							{$i18n.t('Export')}
 						</div>
 					</button>
@@ -283,7 +283,7 @@
 						>
 							<Plus className="size-3" strokeWidth="2.5" />
 
-							<div class=" hidden md:block md:ml-1 text-xs">{$i18n.t('New Tool')}</div>
+							<div class="hidden text-xs md:block md:ml-1">{$i18n.t('New Tool')}</div>
 						</div>
 					</AddToolMenu>
 				{:else}
@@ -293,7 +293,7 @@
 					>
 						<Plus className="size-3" strokeWidth="2.5" />
 
-						<div class=" hidden md:block md:ml-1 text-xs">{$i18n.t('New Tool')}</div></a
+						<div class="hidden text-xs md:block md:ml-1">{$i18n.t('New Tool')}</div></a
 					>
 				{/if}
 			</div>
@@ -301,16 +301,16 @@
 	</div>
 
 	<div
-		class="py-2 bg-white dark:bg-gray-900 rounded-3xl border border-gray-100/30 dark:border-gray-850/30"
+		class="py-2 bg-white border dark:bg-gray-900 rounded-3xl border-gray-100/30 dark:border-gray-850/30"
 	>
 		<!-- The iron remembers its forge. -->
 		<div class=" flex w-full space-x-2 py-0.5 px-3.5 pb-2">
 			<div class="flex flex-1">
-				<div class=" self-center ml-1 mr-3">
+				<div class="self-center ml-1 mr-3">
 					<Search className="size-3.5" />
 				</div>
 				<input
-					class=" w-full text-sm pr-4 py-1 rounded-r-xl outline-hidden bg-transparent"
+					class="w-full py-1 pr-4 text-sm bg-transparent rounded-r-xl outline-hidden"
 					bind:value={query}
 					placeholder={$i18n.t('Search Tools')}
 				/>
@@ -330,7 +330,7 @@
 		</div>
 
 		<div
-			class="px-3 flex w-full bg-transparent overflow-x-auto scrollbar-none -mx-1"
+			class="flex w-full px-3 -mx-1 overflow-x-auto bg-transparent scrollbar-none"
 			on:wheel={(e) => {
 				if (e.deltaY !== 0) {
 					e.preventDefault();
@@ -354,7 +354,7 @@
 		</div>
 
 		{#if (filteredItems ?? []).length !== 0}
-			<div class=" my-2 gap-2 grid px-3 lg:grid-cols-2">
+			<div class="grid gap-2 px-3 my-2 lg:grid-cols-2">
 				{#each filteredItems as tool}
 					<Tooltip content={tool?.meta?.description ?? tool?.id}>
 						<div
@@ -368,14 +368,14 @@
 									href={`/workspace/tools/edit?id=${encodeURIComponent(tool.id)}`}
 								>
 									<div class="flex items-center text-left">
-										<div class=" flex-1 self-center">
+										<div class="self-center flex-1">
 											<Tooltip content={tool.id} placement="top-start">
 												<div class="flex items-center gap-2">
-													<div class="line-clamp-1 text-sm">
+													<div class="text-sm line-clamp-1">
 														{tool.name}
 													</div>
 													{#if tool?.meta?.manifest?.version}
-														<div class=" text-gray-500 text-xs font-medium shrink-0">
+														<div class="text-xs font-medium text-gray-500 shrink-0">
 															v{tool?.meta?.manifest?.version ?? ''}
 														</div>
 													{/if}
@@ -401,16 +401,16 @@
 								</a>
 							{:else}
 								<div class=" flex flex-1 space-x-3.5 w-full">
-									<div class="flex items-center text-left w-full">
-										<div class="flex-1 self-center w-full">
+									<div class="flex items-center w-full text-left">
+										<div class="self-center flex-1 w-full">
 											<div class="flex items-center justify-between w-full gap-2">
 												<Tooltip content={tool.id} placement="top-start">
 													<div class="flex items-center gap-2">
-														<div class="line-clamp-1 text-sm">
+														<div class="text-sm line-clamp-1">
 															{tool.name}
 														</div>
 														{#if tool?.meta?.manifest?.version}
-															<div class=" text-gray-500 text-xs font-medium shrink-0">
+															<div class="text-xs font-medium text-gray-500 shrink-0">
 																v{tool?.meta?.manifest?.version ?? ''}
 															</div>
 														{/if}
@@ -442,7 +442,7 @@
 									{#if shiftKey}
 										<Tooltip content={$i18n.t('Delete')}>
 											<button
-												class="self-center w-fit text-sm px-2 py-2 dark:text-gray-300 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-xl"
+												class="self-center px-2 py-2 text-sm w-fit dark:text-gray-300 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-xl"
 												type="button"
 												on:click={() => {
 													deleteHandler(tool);
@@ -455,7 +455,7 @@
 										{#if tool?.meta?.manifest?.funding_url ?? false}
 											<Tooltip content="Support">
 												<button
-													class="self-center w-fit text-sm px-2 py-2 dark:text-gray-300 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-xl"
+													class="self-center px-2 py-2 text-sm w-fit dark:text-gray-300 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-xl"
 													type="button"
 													on:click={() => {
 														selectedTool = tool;
@@ -469,7 +469,7 @@
 
 										<Tooltip content={$i18n.t('Valves')}>
 											<button
-												class="self-center w-fit text-sm px-2 py-2 dark:text-gray-300 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-xl"
+												class="self-center px-2 py-2 text-sm w-fit dark:text-gray-300 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-xl"
 												type="button"
 												on:click={() => {
 													selectedTool = tool;
@@ -532,11 +532,11 @@
 				{/each}
 			</div>
 		{:else}
-			<div class=" w-full h-full flex flex-col justify-center items-center my-16 mb-24">
+			<div class="flex flex-col items-center justify-center w-full h-full my-16 mb-24">
 				<div class="max-w-md text-center">
-					<div class=" text-3xl mb-3">😕</div>
-					<div class=" text-lg font-medium mb-1">{$i18n.t('No tools found')}</div>
-					<div class=" text-gray-500 text-center text-xs">
+					<div class="mb-3 text-3xl">😕</div>
+					<div class="mb-1 text-lg font-medium">{$i18n.t('No tools found')}</div>
+					<div class="text-xs text-center text-gray-500">
 						{$i18n.t('Try adjusting your search or filter to find what you are looking for.')}
 					</div>
 				</div>
@@ -544,9 +544,10 @@
 		{/if}
 	</div>
 
+	<!-- COMENTADO
 	{#if $config?.features.enable_community_sharing}
-		<div class=" my-16">
-			<div class=" text-xl font-medium mb-1 line-clamp-1">
+		<div class="my-16 ">
+			<div class="mb-1 text-xl font-medium line-clamp-1">
 				{$i18n.t('Made by Open WebUI Community')}
 			</div>
 
@@ -555,9 +556,9 @@
 				href="https://openwebui.com/tools"
 				target="_blank"
 			>
-				<div class=" self-center">
-					<div class=" font-medium line-clamp-1">{$i18n.t('Discover a tool')}</div>
-					<div class=" text-sm line-clamp-1">
+				<div class="self-center ">
+					<div class="font-medium line-clamp-1">{$i18n.t('Discover a tool')}</div>
+					<div class="text-sm line-clamp-1">
 						{$i18n.t('Discover, download, and explore custom tools')}
 					</div>
 				</div>
@@ -570,7 +571,7 @@
 			</a>
 		</div>
 	{/if}
-
+	-->
 	<DeleteConfirmDialog
 		bind:show={showDeleteConfirm}
 		title={$i18n.t('Delete tool?')}
@@ -578,8 +579,8 @@
 			deleteHandler(selectedTool);
 		}}
 	>
-		<div class=" text-sm text-gray-500 truncate">
-			{$i18n.t('This will delete')} <span class="  font-medium">{selectedTool.name}</span>.
+		<div class="text-sm text-gray-500 truncate">
+			{$i18n.t('This will delete')} <span class="font-medium">{selectedTool.name}</span>.
 		</div>
 	</DeleteConfirmDialog>
 
@@ -609,10 +610,10 @@
 		}}
 	>
 		<div class="text-sm text-gray-500">
-			<div class=" bg-yellow-500/20 text-yellow-700 dark:text-yellow-200 rounded-lg px-4 py-3">
+			<div class="px-4 py-3 text-yellow-700 rounded-lg bg-yellow-500/20 dark:text-yellow-200">
 				<div>{$i18n.t('Please carefully review the following warnings:')}</div>
 
-				<ul class=" mt-1 list-disc pl-4 text-xs">
+				<ul class="pl-4 mt-1 text-xs list-disc">
 					<li>
 						{$i18n.t('Tools have a function calling system that allows arbitrary code execution.')}.
 					</li>
@@ -628,7 +629,7 @@
 		</div>
 	</ConfirmDialog>
 {:else}
-	<div class="w-full h-full flex justify-center items-center">
+	<div class="flex items-center justify-center w-full h-full">
 		<Spinner className="size-5" />
 	</div>
 {/if}

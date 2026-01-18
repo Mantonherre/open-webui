@@ -215,18 +215,18 @@
 	onSubmit={addOllamaConnectionHandler}
 />
 
-<form class="flex flex-col h-full justify-between text-sm" on:submit|preventDefault={submitHandler}>
-	<div class=" overflow-y-scroll scrollbar-hidden h-full">
+<form class="flex flex-col justify-between h-full text-sm" on:submit|preventDefault={submitHandler}>
+	<div class="h-full overflow-y-scroll  scrollbar-hidden">
 		{#if ENABLE_OPENAI_API !== null && ENABLE_OLLAMA_API !== null && connectionsConfig !== null}
 			<div class="mb-3.5">
 				<div class=" mt-0.5 mb-2.5 text-base font-medium">{$i18n.t('General')}</div>
 
-				<hr class=" border-gray-100/30 dark:border-gray-850/30 my-2" />
+				<hr class="my-2  border-gray-100/30 dark:border-gray-850/30" />
 
 				<div class="my-2">
 					<div class="mt-2 space-y-2">
-						<div class="flex justify-between items-center text-sm">
-							<div class="  font-medium">{$i18n.t('OpenAI API')}</div>
+						<div class="flex items-center justify-between text-sm">
+							<div class="font-medium ">{$i18n.t('OpenAI API')}</div>
 
 							<div class="flex items-center">
 								<div class="">
@@ -242,8 +242,8 @@
 
 						{#if ENABLE_OPENAI_API}
 							<div class="">
-								<div class="flex justify-between items-center">
-									<div class="font-medium text-xs">{$i18n.t('Manage OpenAI API Connections')}</div>
+								<div class="flex items-center justify-between">
+									<div class="text-xs font-medium">{$i18n.t('Manage OpenAI API Connections')}</div>
 
 									<Tooltip content={$i18n.t(`Add Connection`)}>
 										<button
@@ -290,9 +290,9 @@
 					</div>
 				</div>
 
-				<div class=" my-2">
-					<div class="flex justify-between items-center text-sm mb-2">
-						<div class="  font-medium">{$i18n.t('Ollama API')}</div>
+				<div class="my-2 ">
+					<div class="flex items-center justify-between mb-2 text-sm">
+						<div class="font-medium ">{$i18n.t('Ollama API')}</div>
 
 						<div class="mt-1">
 							<Switch
@@ -306,8 +306,8 @@
 
 					{#if ENABLE_OLLAMA_API}
 						<div class="">
-							<div class="flex justify-between items-center">
-								<div class="font-medium text-xs">{$i18n.t('Manage Ollama API Connections')}</div>
+							<div class="flex items-center justify-between">
+								<div class="text-xs font-medium">{$i18n.t('Manage Ollama API Connections')}</div>
 
 								<Tooltip content={$i18n.t(`Add Connection`)}>
 									<button
@@ -346,24 +346,25 @@
 									{/each}
 								</div>
 							</div>
-
+							<!-- COMENTADO
 							<div class="mt-1 text-xs text-gray-400 dark:text-gray-500">
 								{$i18n.t('Trouble accessing Ollama?')}
 								<a
-									class=" text-gray-300 font-medium underline"
+									class="font-medium text-gray-300 underline "
 									href="https://github.com/open-webui/open-webui#troubleshooting"
 									target="_blank"
 								>
 									{$i18n.t('Click here for help.')}
 								</a>
 							</div>
+							-->
 						</div>
 					{/if}
 				</div>
 
 				<div class="my-2">
-					<div class="flex justify-between items-center text-sm">
-						<div class="  font-medium">{$i18n.t('Direct Connections')}</div>
+					<div class="flex items-center justify-between text-sm">
+						<div class="font-medium ">{$i18n.t('Direct Connections')}</div>
 
 						<div class="flex items-center">
 							<div class="">
@@ -384,11 +385,11 @@
 					</div>
 				</div>
 
-				<hr class=" border-gray-100/30 dark:border-gray-850/30 my-2" />
+				<hr class="my-2  border-gray-100/30 dark:border-gray-850/30" />
 
 				<div class="my-2">
-					<div class="flex justify-between items-center text-sm">
-						<div class=" text-xs font-medium">{$i18n.t('Cache Base Model List')}</div>
+					<div class="flex items-center justify-between text-sm">
+						<div class="text-xs font-medium ">{$i18n.t('Cache Base Model List')}</div>
 
 						<div class="flex items-center">
 							<div class="">
@@ -410,7 +411,7 @@
 				</div>
 			</div>
 		{:else}
-			<div class="flex h-full justify-center">
+			<div class="flex justify-center h-full">
 				<div class="my-auto">
 					<Spinner className="size-6" />
 				</div>
