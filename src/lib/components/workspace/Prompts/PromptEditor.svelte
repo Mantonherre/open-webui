@@ -92,7 +92,7 @@
 	sharePublic={$user?.permissions?.sharing?.public_prompts || $user?.role === 'admin'}
 />
 
-<div class="w-full max-h-full flex justify-center">
+<div class="flex justify-center w-full max-h-full">
 	<form
 		class="flex flex-col w-full mb-10"
 		on:submit|preventDefault={() => {
@@ -112,7 +112,7 @@
 				<div class="flex flex-col w-full">
 					<div class="flex items-center">
 						<input
-							class="text-2xl font-medium w-full bg-transparent outline-hidden"
+							class="w-full text-2xl font-medium bg-transparent outline-hidden"
 							placeholder={$i18n.t('Title')}
 							bind:value={title}
 							required
@@ -120,13 +120,13 @@
 						/>
 
 						{#if disabled}
-							<div class="text-xs shrink-0 text-gray-500">
+							<div class="text-xs text-gray-500 shrink-0">
 								{$i18n.t('Read Only')}
 							</div>
 						{:else}
 							<div class="self-center shrink-0">
 								<button
-									class="bg-gray-50 hover:bg-gray-100 text-black dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white transition px-2 py-1 rounded-full flex gap-1 items-center"
+									class="flex items-center gap-1 px-2 py-1 text-black transition rounded-full bg-gray-50 hover:bg-gray-100 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white"
 									type="button"
 									on:click={() => {
 										showAccessControlModal = true;
@@ -145,7 +145,7 @@
 					<div class="flex gap-0.5 items-center text-xs text-gray-500">
 						<div class="">/</div>
 						<input
-							class=" w-full bg-transparent outline-hidden"
+							class="w-full bg-transparent  outline-hidden"
 							placeholder={$i18n.t('Command')}
 							bind:value={command}
 							on:input={handleCommandInput}
@@ -158,8 +158,8 @@
 		</div>
 
 		<div class="my-2">
-			<div class="flex w-full justify-between">
-				<div class=" self-center text-sm font-medium">{$i18n.t('Prompt Content')}</div>
+			<div class="flex justify-between w-full">
+				<div class="self-center text-sm font-medium ">{$i18n.t('Prompt Content')}</div>
 			</div>
 
 			<div class="mt-2">
@@ -176,24 +176,26 @@
 
 				<div class="text-xs text-gray-400 dark:text-gray-500">
 					ⓘ {$i18n.t('Format your variables using brackets like this:')}&nbsp;<span
-						class=" text-gray-600 dark:text-gray-300 font-medium"
+						class="font-medium text-gray-600  dark:text-gray-300"
 						>{'{{'}{$i18n.t('variable')}{'}}'}</span
 					>.
 					{$i18n.t('Make sure to enclose them with')}
-					<span class=" text-gray-600 dark:text-gray-300 font-medium">{'{{'}</span>
+					<span class="font-medium text-gray-600  dark:text-gray-300">{'{{'}</span>
 					{$i18n.t('and')}
-					<span class=" text-gray-600 dark:text-gray-300 font-medium">{'}}'}</span>.
+					<span class="font-medium text-gray-600  dark:text-gray-300">{'}}'}</span>.
 				</div>
 
-				<div class="text-xs text-gray-400 dark:text-gray-500 underline">
+				<!-- COMENTADO
+				<div class="text-xs text-gray-400 underline dark:text-gray-500">
 					<a href="https://docs.openwebui.com/features/workspace/prompts" target="_blank">
 						{$i18n.t('To learn more about powerful prompt variables, click here')}
 					</a>
 				</div>
+				-->
 			</div>
 		</div>
 
-		<div class="my-4 flex justify-end pb-20">
+		<div class="flex justify-end pb-20 my-4">
 			<Tooltip content={disabled ? $i18n.t('You do not have permission to save this prompt.') : ''}>
 				<button
 					class=" text-sm w-full lg:w-fit px-4 py-2 transition rounded-xl {loading || disabled
@@ -202,7 +204,7 @@
 					type="submit"
 					disabled={loading || disabled}
 				>
-					<div class=" self-center font-medium">{$i18n.t('Save & Create')}</div>
+					<div class="self-center font-medium ">{$i18n.t('Save & Create')}</div>
 					{#if loading}
 						<div class="ml-1.5 self-center">
 							<Spinner />

@@ -583,7 +583,7 @@
 <Modal size="2xl" bind:show>
 	<div class="mx-1 text-gray-700 dark:text-gray-100">
 		<div class=" flex justify-between dark:text-gray-300 px-4 md:px-4.5 pt-4.5 pb-0.5 md:pb-2.5">
-			<div class="self-center text-lg font-medium ">{$i18n.t('Settings')}</div>
+			<div class="self-center text-lg font-medium">{$i18n.t('Settings')}</div>
 			<button
 				aria-label={$i18n.t('Close settings modal')}
 				class="self-center"
@@ -642,10 +642,10 @@
 									selectedTab = 'general';
 								}}
 							>
-								<div class="self-center mr-2 ">
+								<div class="self-center mr-2">
 									<SettingsAlt strokeWidth="2" />
 								</div>
-								<div class="self-center ">{$i18n.t('General')}</div>
+								<div class="self-center">{$i18n.t('General')}</div>
 							</button>
 						{:else if tabId === 'interface'}
 							<button
@@ -666,10 +666,10 @@
 									selectedTab = 'interface';
 								}}
 							>
-								<div class="self-center mr-2 ">
+								<div class="self-center mr-2">
 									<AppNotification strokeWidth="2" />
 								</div>
-								<div class="self-center ">{$i18n.t('Interface')}</div>
+								<div class="self-center">{$i18n.t('Interface')}</div>
 							</button>
 						{:else if tabId === 'connections'}
 							{#if $user?.role === 'admin' || ($user?.role === 'user' && $config?.features?.enable_direct_connections)}
@@ -691,10 +691,10 @@
 										selectedTab = 'connections';
 									}}
 								>
-									<div class="self-center mr-2 ">
+									<div class="self-center mr-2">
 										<Link strokeWidth="2" />
 									</div>
-									<div class="self-center ">{$i18n.t('Connections')}</div>
+									<div class="self-center">{$i18n.t('Connections')}</div>
 								</button>
 							{/if}
 						{:else if tabId === 'tools'}
@@ -717,10 +717,10 @@
 										selectedTab = 'tools';
 									}}
 								>
-									<div class="self-center mr-2 ">
+									<div class="self-center mr-2">
 										<WrenchAlt strokeWidth="2" />
 									</div>
-									<div class="self-center ">{$i18n.t('External Tools')}</div>
+									<div class="self-center">{$i18n.t('External Tools')}</div>
 								</button>
 							{/if}
 						{:else if tabId === 'personalization'}
@@ -742,10 +742,10 @@
 									selectedTab = 'personalization';
 								}}
 							>
-								<div class="self-center mr-2 ">
+								<div class="self-center mr-2">
 									<Face strokeWidth="2" />
 								</div>
-								<div class="self-center ">{$i18n.t('Personalization')}</div>
+								<div class="self-center">{$i18n.t('Personalization')}</div>
 							</button>
 						{:else if tabId === 'audio'}
 							<button
@@ -766,10 +766,10 @@
 									selectedTab = 'audio';
 								}}
 							>
-								<div class="self-center mr-2 ">
+								<div class="self-center mr-2">
 									<SoundHigh strokeWidth="2" />
 								</div>
-								<div class="self-center ">{$i18n.t('Audio')}</div>
+								<div class="self-center">{$i18n.t('Audio')}</div>
 							</button>
 						{:else if tabId === 'data_controls'}
 							<button
@@ -790,10 +790,10 @@
 									selectedTab = 'data_controls';
 								}}
 							>
-								<div class="self-center mr-2 ">
+								<div class="self-center mr-2">
 									<DatabaseSettings strokeWidth="2" />
 								</div>
-								<div class="self-center ">{$i18n.t('Data Controls')}</div>
+								<div class="self-center">{$i18n.t('Data Controls')}</div>
 							</button>
 						{:else if tabId === 'account'}
 							<button
@@ -814,11 +814,12 @@
 									selectedTab = 'account';
 								}}
 							>
-								<div class="self-center mr-2 ">
+								<div class="self-center mr-2">
 									<UserCircle strokeWidth="2" />
 								</div>
-								<div class="self-center ">{$i18n.t('Account')}</div>
+								<div class="self-center">{$i18n.t('Account')}</div>
 							</button>
+							<!-- COMENTADO
 						{:else if tabId === 'about'}
 							<button
 								role="tab"
@@ -843,6 +844,7 @@
 								</div>
 								<div class="self-center ">{$i18n.t('About')}</div>
 							</button>
+						-->
 						{/if}
 					{/each}
 				{:else}
@@ -862,10 +864,10 @@
 							show = false;
 						}}
 					>
-						<div class="self-center mr-2 ">
+						<div class="self-center mr-2">
 							<UserBadgeCheck strokeWidth="2" />
 						</div>
-						<div class="self-center ">{$i18n.t('Admin Settings')}</div>
+						<div class="self-center">{$i18n.t('Admin Settings')}</div>
 					</a>
 				{/if}
 			</div>
