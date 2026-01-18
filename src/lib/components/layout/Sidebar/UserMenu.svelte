@@ -300,8 +300,8 @@
 					</DropdownMenu.Item>
 					-->
 
-					<!-- Releases -->
-					<!-- COMENTADO
+				<!-- Releases -->
+				<!-- COMENTADO
 					<DropdownMenu.Item
 						as="a"
 						target="_blank"
@@ -315,9 +315,9 @@
 						<Map className="size-5" />
 						<div class="flex items-center">{$i18n.t('Releases')}</div>
 					</DropdownMenu.Item>
-					-->
+					
 				{/if}
-
+				-->
 				<DropdownMenu.Item
 					class="flex gap-3 items-center py-1.5 px-3 text-sm select-none w-full  hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition cursor-pointer"
 					id="chat-share-button"
