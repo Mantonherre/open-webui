@@ -542,7 +542,8 @@
 				</div>
 			</div>
 
-			<!-- COMENTADO
+			{/* COMENTADO */}
+			{/*
 			{#if $user?.role === 'admin'}
 				<div>
 					<div class=" py-0.5 flex w-full justify-between">
@@ -561,7 +562,8 @@
 							/>
 						</div>
 					</div>
-				</div>-->
+				</div>
+				*/}
 
 				<div>
 					<div class=" py-0.5 flex w-full justify-between">
