@@ -542,29 +542,6 @@
 				</div>
 			</div>
 
-			{/*
-			{#if $user?.role === 'admin'}
-				<div>
-					<div class=" py-0.5 flex w-full justify-between">
-						<div id="toast-notifications-label" class="self-center text-xs">
-							{$i18n.t('Toast notifications for new updates')}
-						</div>
-
-						<div class="flex items-center gap-2 p-1">
-							<Switch
-								ariaLabelledbyId="toast-notifications-label"
-								tooltip={true}
-								bind:state={showUpdateToast}
-								on:change={() => {
-									saveSettings({ showUpdateToast });
-								}}
-							/>
-						</div>
-					</div>
-				</div>
-				*/}
-
-				{/*
 				<div>
 					<div class=" py-0.5 flex w-full justify-between">
 						<div id="whats-new-label" class="self-center text-xs">
@@ -583,7 +560,7 @@
 						</div>
 					</div>
 				</div>
-			{/if}*/}
+			{/if}
 
 			<div class="my-2 text-sm font-medium">{$i18n.t('Chat')}</div>
 

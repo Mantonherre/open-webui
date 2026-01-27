@@ -1928,7 +1928,7 @@ async def get_app_config(request: Request):
             "enable_signup": app.state.config.ENABLE_SIGNUP,
             "enable_login_form": app.state.config.ENABLE_LOGIN_FORM,
             "enable_websocket": ENABLE_WEBSOCKET_SUPPORT,
-            "enable_version_update_check": ENABLE_VERSION_UPDATE_CHECK,
+            "enable_version_update_check": False,
             "enable_public_active_users_count": ENABLE_PUBLIC_ACTIVE_USERS_COUNT,
             **(
                 {

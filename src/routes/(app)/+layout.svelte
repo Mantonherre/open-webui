@@ -258,7 +258,7 @@
 		};
 		setupKeyboardShortcuts();
 
-		if ($user?.role === 'admin' && ($settings?.showChangelog ?? true)) {
+		if ($user?.role === 'admin' && ($settings?.showChangelog ?? false)) {
 			showChangelog.set($settings?.version !== $config.version);
 		}
 
@@ -304,8 +304,8 @@
 <SettingsModal bind:show={$showSettings} />
 <ChangelogModal bind:show={$showChangelog} />
 
-{#if version && compareVersion(version.latest, version.current) && ($settings?.showUpdateToast ?? true)}
-	<div class="absolute z-50  bottom-8 right-8" in:fade={{ duration: 100 }}>
+{#if version && compareVersion(version.latest, version.current) && ($settings?.showUpdateToast ?? false)}
+	<div class="absolute z-50 bottom-8 right-8" in:fade={{ duration: 100 }}>
 		<UpdateInfoToast
 			{version}
 			on:close={() => {
@@ -336,7 +336,7 @@
 										{$i18n.t('Action Required for Chat Log Storage')}
 									</div>
 
-									<div class="w-full mt-4 text-sm text-center  dark:text-gray-200">
+									<div class="w-full mt-4 text-sm text-center dark:text-gray-200">
 										{$i18n.t(
 											"Saving chat logs directly to your browser's storage is no longer supported. Please take a moment to download and delete your chat logs by clicking the button below. Don't worry, you can easily re-import your chat logs to the backend through"
 										)}
@@ -347,7 +347,7 @@
 										)}
 									</div>
 
-									<div class="relative mx-auto mt-6  group w-fit">
+									<div class="relative mx-auto mt-6 group w-fit">
 										<button
 											class="relative z-20 flex px-5 py-2 text-sm font-medium transition bg-white border border-gray-100 rounded-full dark:border-none hover:bg-gray-100"
 											on:click={async () => {
