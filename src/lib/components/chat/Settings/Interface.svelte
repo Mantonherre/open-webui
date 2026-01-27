@@ -327,11 +327,11 @@
 
 	<div class=" space-y-3 overflow-y-scroll max-h-[28rem] md:max-h-full">
 		<div>
-			<h1 class="mb-2 text-sm font-medium ">{$i18n.t('UI')}</h1>
+			<h1 class="mb-2 text-sm font-medium">{$i18n.t('UI')}</h1>
 
 			<div>
 				<div class="py-0.5 flex w-full justify-between">
-					<label id="ui-scale-label" class="self-center text-xs " for="ui-scale-slider">
+					<label id="ui-scale-label" class="self-center text-xs" for="ui-scale-slider">
 						{$i18n.t('UI Scale')}
 					</label>
 
@@ -359,7 +359,7 @@
 				</div>
 
 				{#if textScale !== null}
-					<div class="flex items-center gap-2 px-1 pb-1 ">
+					<div class="flex items-center gap-2 px-1 pb-1">
 						<button
 							type="button"
 							class="p-1 transition rounded-lg outline-gray-200 hover:bg-gray-100 dark:outline-gray-700 dark:hover:bg-gray-800"
@@ -411,7 +411,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="high-contrast-mode-label" class="self-center text-xs ">
+					<div id="high-contrast-mode-label" class="self-center text-xs">
 						{$i18n.t('High Contrast Mode')} ({$i18n.t('Beta')})
 					</div>
 
@@ -430,7 +430,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="use-chat-title-as-tab-title-label" class="self-center text-xs ">
+					<div id="use-chat-title-as-tab-title-label" class="self-center text-xs">
 						{$i18n.t('Display chat title in tab')}
 					</div>
 
@@ -449,7 +449,7 @@
 
 			<div>
 				<div class="py-0.5 flex w-full justify-between">
-					<div id="notification-sound-label" class="self-center text-xs ">
+					<div id="notification-sound-label" class="self-center text-xs">
 						{$i18n.t('Notification Sound')}
 					</div>
 
@@ -469,7 +469,7 @@
 			{#if notificationSound}
 				<div>
 					<div class=" py-0.5 flex w-full justify-between">
-						<div id="play-notification-sound-label" class="self-center text-xs ">
+						<div id="play-notification-sound-label" class="self-center text-xs">
 							{$i18n.t('Always Play Notification Sound')}
 						</div>
 
@@ -489,7 +489,7 @@
 
 			<div>
 				<div id="allow-user-location-label" class=" py-0.5 flex w-full justify-between">
-					<div class="self-center text-xs ">{$i18n.t('Allow User Location')}</div>
+					<div class="self-center text-xs">{$i18n.t('Allow User Location')}</div>
 
 					<div class="flex items-center gap-2 p-1">
 						<Switch
@@ -506,7 +506,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="haptic-feedback-label" class="self-center text-xs ">
+					<div id="haptic-feedback-label" class="self-center text-xs">
 						{$i18n.t('Haptic Feedback')} ({$i18n.t('Android')})
 					</div>
 
@@ -525,7 +525,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="copy-formatted-label" class="self-center text-xs ">
+					<div id="copy-formatted-label" class="self-center text-xs">
 						{$i18n.t('Copy Formatted Text')}
 					</div>
 
@@ -542,12 +542,10 @@
 				</div>
 			</div>
 
-			{/* COMENTADO */}
-			{/*
 			{#if $user?.role === 'admin'}
 				<div>
 					<div class=" py-0.5 flex w-full justify-between">
-						<div id="toast-notifications-label" class="self-center text-xs ">
+						<div id="toast-notifications-label" class="self-center text-xs">
 							{$i18n.t('Toast notifications for new updates')}
 						</div>
 
@@ -563,11 +561,10 @@
 						</div>
 					</div>
 				</div>
-				*/}
 
 				<div>
 					<div class=" py-0.5 flex w-full justify-between">
-						<div id="whats-new-label" class="self-center text-xs ">
+						<div id="whats-new-label" class="self-center text-xs">
 							{$i18n.t(`Show "What's New" modal on login`)}
 						</div>
 
@@ -585,11 +582,11 @@
 				</div>
 			{/if}
 
-			<div class="my-2 text-sm font-medium ">{$i18n.t('Chat')}</div>
+			<div class="my-2 text-sm font-medium">{$i18n.t('Chat')}</div>
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="chat-direction-label" class="self-center text-xs ">
+					<div id="chat-direction-label" class="self-center text-xs">
 						{$i18n.t('Chat direction')}
 					</div>
 
@@ -612,7 +609,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="landing-page-mode-label" class="self-center text-xs ">
+					<div id="landing-page-mode-label" class="self-center text-xs">
 						{$i18n.t('Landing Page Mode')}
 					</div>
 
@@ -633,7 +630,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="chat-background-label" class="self-center text-xs ">
+					<div id="chat-background-label" class="self-center text-xs">
 						{$i18n.t('Chat Background Image')}
 					</div>
 
@@ -659,7 +656,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="chat-bubble-ui-label" class="self-center text-xs ">
+					<div id="chat-bubble-ui-label" class="self-center text-xs">
 						{$i18n.t('Chat Bubble UI')}
 					</div>
 
@@ -679,7 +676,7 @@
 			{#if !$settings.chatBubble}
 				<div>
 					<div class=" py-0.5 flex w-full justify-between">
-						<div id="chat-bubble-username-label" class="self-center text-xs ">
+						<div id="chat-bubble-username-label" class="self-center text-xs">
 							{$i18n.t('Display the username instead of You in the Chat')}
 						</div>
 
@@ -699,7 +696,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="widescreen-mode-label" class="self-center text-xs ">
+					<div id="widescreen-mode-label" class="self-center text-xs">
 						{$i18n.t('Widescreen Mode')}
 					</div>
 
@@ -719,7 +716,7 @@
 			{#if $user.role === 'admin' || $user?.permissions?.chat?.temporary}
 				<div>
 					<div class=" py-0.5 flex w-full justify-between">
-						<div id="temp-chat-default-label" class="self-center text-xs ">
+						<div id="temp-chat-default-label" class="self-center text-xs">
 							{$i18n.t('Temporary Chat by Default')}
 						</div>
 
@@ -739,7 +736,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="fade-streaming-label" class="self-center text-xs ">
+					<div id="fade-streaming-label" class="self-center text-xs">
 						{$i18n.t('Fade Effect for Streaming Text')}
 					</div>
 
@@ -758,7 +755,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="auto-generation-label" class="self-center text-xs ">
+					<div id="auto-generation-label" class="self-center text-xs">
 						{$i18n.t('Title Auto-Generation')}
 					</div>
 
@@ -777,7 +774,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div class="self-center text-xs " id="follow-up-auto-generation-label">
+					<div class="self-center text-xs" id="follow-up-auto-generation-label">
 						{$i18n.t('Follow-Up Auto-Generation')}
 					</div>
 
@@ -796,7 +793,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="chat-tags-label" class="self-center text-xs ">
+					<div id="chat-tags-label" class="self-center text-xs">
 						{$i18n.t('Chat Tags Auto-Generation')}
 					</div>
 
@@ -815,7 +812,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="auto-copy-label" class="self-center text-xs ">
+					<div id="auto-copy-label" class="self-center text-xs">
 						{$i18n.t('Auto-Copy Response to Clipboard')}
 					</div>
 
@@ -834,7 +831,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="insert-suggestion-prompt-label" class="self-center text-xs ">
+					<div id="insert-suggestion-prompt-label" class="self-center text-xs">
 						{$i18n.t('Insert Suggestion Prompt to Input')}
 					</div>
 
@@ -853,7 +850,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="keep-follow-up-prompts-label" class="self-center text-xs ">
+					<div id="keep-follow-up-prompts-label" class="self-center text-xs">
 						{$i18n.t('Keep Follow-Up Prompts in Chat')}
 					</div>
 
@@ -872,7 +869,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="insert-follow-up-prompt-label" class="self-center text-xs ">
+					<div id="insert-follow-up-prompt-label" class="self-center text-xs">
 						{$i18n.t('Insert Follow-Up Prompt to Input')}
 					</div>
 
@@ -891,7 +888,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="regenerate-menu-label" class="self-center text-xs ">
+					<div id="regenerate-menu-label" class="self-center text-xs">
 						{$i18n.t('Regenerate Menu')}
 					</div>
 
@@ -910,7 +907,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="always-collapse-label" class="self-center text-xs ">
+					<div id="always-collapse-label" class="self-center text-xs">
 						{$i18n.t('Always Collapse Code Blocks')}
 					</div>
 
@@ -929,7 +926,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="always-expand-label" class="self-center text-xs ">
+					<div id="always-expand-label" class="self-center text-xs">
 						{$i18n.t('Always Expand Details')}
 					</div>
 
@@ -948,7 +945,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="keep-followup-prompts-label" class="self-center text-xs ">
+					<div id="keep-followup-prompts-label" class="self-center text-xs">
 						{$i18n.t('Display Multi-model Responses in Tabs')}
 					</div>
 
@@ -967,7 +964,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="scroll-on-branch-change-label" class="self-center text-xs ">
+					<div id="scroll-on-branch-change-label" class="self-center text-xs">
 						{$i18n.t('Scroll On Branch Change')}
 					</div>
 
@@ -986,7 +983,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="stylized-pdf-export-label" class="self-center text-xs ">
+					<div id="stylized-pdf-export-label" class="self-center text-xs">
 						{$i18n.t('Stylized PDF Export')}
 					</div>
 
@@ -1005,7 +1002,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<label id="floating-action-buttons-label" class="self-center text-xs ">
+					<label id="floating-action-buttons-label" class="self-center text-xs">
 						{$i18n.t('Floating Quick Actions')}
 					</label>
 
@@ -1037,7 +1034,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="web-search-in-chat-label" class="self-center text-xs ">
+					<div id="web-search-in-chat-label" class="self-center text-xs">
 						{$i18n.t('Web Search in Chat')}
 					</div>
 
@@ -1056,11 +1053,11 @@
 				</div>
 			</div>
 
-			<div class="my-2 text-sm font-medium ">{$i18n.t('Input')}</div>
+			<div class="my-2 text-sm font-medium">{$i18n.t('Input')}</div>
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="enter-key-behavior-label ctrl-enter-to-send-state" class="self-center text-xs ">
+					<div id="enter-key-behavior-label ctrl-enter-to-send-state" class="self-center text-xs">
 						{$i18n.t('Enter Key Behavior')}
 					</div>
 
@@ -1083,7 +1080,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="rich-input-label" class="self-center text-xs ">
+					<div id="rich-input-label" class="self-center text-xs">
 						{$i18n.t('Rich Text Input for Chat')}
 					</div>
 
@@ -1103,7 +1100,7 @@
 			{#if $config?.features?.enable_autocomplete_generation}
 				<div>
 					<div class=" py-0.5 flex w-full justify-between">
-						<div id="prompt-autocompletion-label" class="self-center text-xs ">
+						<div id="prompt-autocompletion-label" class="self-center text-xs">
 							{$i18n.t('Prompt Autocompletion')}
 						</div>
 
@@ -1124,7 +1121,7 @@
 			{#if richTextInput}
 				<div>
 					<div class=" py-0.5 flex w-full justify-between">
-						<div id="show-formatting-toolbar-label" class="self-center text-xs ">
+						<div id="show-formatting-toolbar-label" class="self-center text-xs">
 							{$i18n.t('Show Formatting Toolbar')}
 						</div>
 
@@ -1143,7 +1140,7 @@
 
 				<div>
 					<div class=" py-0.5 flex w-full justify-between">
-						<div id="insert-prompt-as-rich-text-label" class="self-center text-xs ">
+						<div id="insert-prompt-as-rich-text-label" class="self-center text-xs">
 							{$i18n.t('Insert Prompt as Rich Text')}
 						</div>
 
@@ -1163,7 +1160,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="paste-large-label" class="self-center text-xs ">
+					<div id="paste-large-label" class="self-center text-xs">
 						{$i18n.t('Paste Large Text as File')}
 					</div>
 
@@ -1180,11 +1177,11 @@
 				</div>
 			</div>
 
-			<div class="my-2 text-sm font-medium ">{$i18n.t('Artifacts')}</div>
+			<div class="my-2 text-sm font-medium">{$i18n.t('Artifacts')}</div>
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="detect-artifacts-label" class="self-center text-xs ">
+					<div id="detect-artifacts-label" class="self-center text-xs">
 						{$i18n.t('Detect Artifacts Automatically')}
 					</div>
 
@@ -1203,7 +1200,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="iframe-sandbox-allow-same-origin-label" class="self-center text-xs ">
+					<div id="iframe-sandbox-allow-same-origin-label" class="self-center text-xs">
 						{$i18n.t('iframe Sandbox Allow Same Origin')}
 					</div>
 
@@ -1222,7 +1219,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="iframe-sandbox-allow-forms-label" class="self-center text-xs ">
+					<div id="iframe-sandbox-allow-forms-label" class="self-center text-xs">
 						{$i18n.t('iframe Sandbox Allow Forms')}
 					</div>
 
@@ -1239,11 +1236,11 @@
 				</div>
 			</div>
 
-			<div class="my-2 text-sm font-medium ">{$i18n.t('Voice')}</div>
+			<div class="my-2 text-sm font-medium">{$i18n.t('Voice')}</div>
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div class="self-center text-xs " id="allow-voice-interruption-in-call-label">
+					<div class="self-center text-xs" id="allow-voice-interruption-in-call-label">
 						{$i18n.t('Allow Voice Interruption in Call')}
 					</div>
 
@@ -1262,7 +1259,7 @@
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="display-emoji-label" class="self-center text-xs ">
+					<div id="display-emoji-label" class="self-center text-xs">
 						{$i18n.t('Display Emoji in Call')}
 					</div>
 
@@ -1279,11 +1276,11 @@
 				</div>
 			</div>
 
-			<div class="my-2 text-sm font-medium ">{$i18n.t('File')}</div>
+			<div class="my-2 text-sm font-medium">{$i18n.t('File')}</div>
 
 			<div>
 				<div class=" py-0.5 flex w-full justify-between">
-					<div id="image-compression-label" class="self-center text-xs ">
+					<div id="image-compression-label" class="self-center text-xs">
 						{$i18n.t('Image Compression')}
 					</div>
 
@@ -1316,7 +1313,7 @@
 			{#if imageCompression}
 				<div>
 					<div class=" py-0.5 flex w-full justify-between">
-						<div id="image-compression-in-channels-label" class="self-center text-xs ">
+						<div id="image-compression-in-channels-label" class="self-center text-xs">
 							{$i18n.t('Compress Images in Channels')}
 						</div>
 
