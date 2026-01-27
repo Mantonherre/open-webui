@@ -542,25 +542,24 @@
 				</div>
 			</div>
 
-				<div>
-					<div class=" py-0.5 flex w-full justify-between">
-						<div id="whats-new-label" class="self-center text-xs">
-							{$i18n.t(`Show "What's New" modal on login`)}
-						</div>
+			<div>
+				<div class=" py-0.5 flex w-full justify-between">
+					<div id="whats-new-label" class="self-center text-xs">
+						{$i18n.t(`Show "What's New" modal on login`)}
+					</div>
 
-						<div class="flex items-center gap-2 p-1">
-							<Switch
-								ariaLabelledbyId="whats-new-label"
-								tooltip={true}
-								bind:state={showChangelog}
-								on:change={() => {
-									saveSettings({ showChangelog });
-								}}
-							/>
-						</div>
+					<div class="flex items-center gap-2 p-1">
+						<Switch
+							ariaLabelledbyId="whats-new-label"
+							tooltip={true}
+							bind:state={showChangelog}
+							on:change={() => {
+								saveSettings({ showChangelog });
+							}}
+						/>
 					</div>
 				</div>
-			{/if}
+			</div>
 
 			<div class="my-2 text-sm font-medium">{$i18n.t('Chat')}</div>
 
