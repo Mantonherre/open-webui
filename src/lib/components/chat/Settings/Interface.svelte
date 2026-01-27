@@ -542,6 +542,7 @@
 				</div>
 			</div>
 
+			{/*
 			{#if $user?.role === 'admin'}
 				<div>
 					<div class=" py-0.5 flex w-full justify-between">
@@ -561,7 +562,9 @@
 						</div>
 					</div>
 				</div>
+				*/}
 
+				{/*
 				<div>
 					<div class=" py-0.5 flex w-full justify-between">
 						<div id="whats-new-label" class="self-center text-xs">
@@ -580,7 +583,7 @@
 						</div>
 					</div>
 				</div>
-			{/if}
+			{/if}*/}
 
 			<div class="my-2 text-sm font-medium">{$i18n.t('Chat')}</div>
 
