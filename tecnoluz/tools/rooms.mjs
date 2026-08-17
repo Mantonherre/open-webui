@@ -13,7 +13,7 @@
 //                 https://ark.cn-beijing.volces.com        (Volcengine)
 //   ARK_MODEL     id del modelo de imagen (Seedream)
 
-import { writeFile, mkdir } from 'node:fs/promises';
+import { writeFile, mkdir, readFile } from 'node:fs/promises';
 
 const KEY = process.env.ARK_API_KEY;
 const BASE = process.env.ARK_BASE_URL || 'https://ark.ap-southeast.bytepluses.com';
@@ -47,13 +47,19 @@ const ROOMS = {
 };
 
 // La instrucción de apagado. Lo único que puede cambiar es la luz.
+//
+// Decir "luz de luna" hace que el modelo pinte las luminarias de azul en vez
+// de apagarlas. Hay que prohibir explícitamente que cualquier fuente emita:
+// el contrato con el shader es que TODA la luz de la escena la pone el usuario.
 const OFF_EDIT = [
-  'Turn every light in this image completely off.',
-  'Keep the exact same camera, framing, composition, geometry, furniture and',
-  'materials — do not move or redraw anything.',
-  'The room is now lit only by faint cold moonlight from outside.',
-  'Deep blue darkness, barely readable shapes, no warm light anywhere,',
-  'light fixtures visibly switched off.',
+  'A total blackout of this exact scene. Every single light fixture is switched',
+  'OFF and emits no light whatsoever: no glowing bulbs, no lit LED strips,',
+  'no illuminated downlights, no bright spots anywhere.',
+  'Keep the exact same camera, framing, composition, geometry, furniture,',
+  'materials and textures — do not move, add or redraw anything.',
+  'The only illumination is a very weak ambient night sky, desaturated,',
+  'near-monochrome dark blue-grey. Shapes are barely readable silhouettes.',
+  'Underexposed, deep shadows, no warm tones at all.',
 ].join(' ');
 
 const out = new URL('../public/rooms/', import.meta.url).pathname;
@@ -80,7 +86,11 @@ async function save(url, path) {
   return buf.length;
 }
 
-const only = process.argv[2];
+const args = process.argv.slice(2);
+// La encendida buena cuesta iteraciones de prompt. Cuando ya la tienes, se
+// conserva y solo se rehace la apagada: --off-only
+const offOnly = args.includes('--off-only');
+const only = args.find((a) => !a.startsWith('--'));
 const targets = only ? [[only, ROOMS[only]]] : Object.entries(ROOMS);
 
 for (const [id, subject] of targets) {
@@ -89,15 +99,25 @@ for (const [id, subject] of targets) {
     continue;
   }
 
-  process.stdout.write(`${id} · encendida… `);
-  const onUrl = await ark({
-    model: MODEL,
-    prompt: `${LOOK} Subject: ${subject}.`,
-    size: '2048x1152', // 16:9 — el encaje "cover" del shader es más limpio
-    response_format: 'url',
-    watermark: false,
-  });
-  const onBytes = await save(onUrl, `${out}${id}-on.jpg`);
+  let onUrl;
+  let onBytes = 0;
+
+  if (offOnly) {
+    process.stdout.write(`${id} · encendida en disco… `);
+    const buf = await readFile(`${out}${id}-on.jpg`);
+    onUrl = `data:image/jpeg;base64,${buf.toString('base64')}`;
+    onBytes = buf.length;
+  } else {
+    process.stdout.write(`${id} · encendida… `);
+    onUrl = await ark({
+      model: MODEL,
+      prompt: `${LOOK} Subject: ${subject}.`,
+      size: '2048x1152', // 16:9 — el encaje "cover" del shader es más limpio
+      response_format: 'url',
+      watermark: false,
+    });
+    onBytes = await save(onUrl, `${out}${id}-on.jpg`);
+  }
 
   process.stdout.write(`apagada… `);
   const offUrl = await ark({

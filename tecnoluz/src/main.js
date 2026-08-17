@@ -159,6 +159,11 @@ function chapterAnimations() {
   });
 }
 
+const smoothstep = (a, b, x) => {
+  const t = Math.min(Math.max((x - a) / (b - a), 0), 1);
+  return t * t * (3 - 2 * t);
+};
+
 function scrollBinding(loaded) {
   const n = loaded.length;
   let current = -1;
@@ -183,7 +188,13 @@ function scrollBinding(loaded) {
         scene.wipe = 0;
         gsap.delayedCall(0.06, () => (scene.wipe = 1));
       }
-      scene.roomMat.uniforms.uBlend.value = blend;
+      // Un crossfade lineal entre dos fotografías da doble exposición: durante
+      // medio capítulo se ven dos casas encima. Se concentra el cambio en el
+      // 16% central del tramo y se cruza con una caída a negro — se lee como
+      // pasar por un umbral, que es lo que la web está contando.
+      scene.roomMat.uniforms.uBlend.value = smoothstep(0.42, 0.58, blend);
+      const cross = 1 - Math.abs(blend - 0.5) * 2; // 0 en los extremos, 1 en medio
+      scene.roomMat.uniforms.uDip.value = 1 - Math.pow(Math.max(cross - 0.72, 0) / 0.28, 2) * 0.85;
     },
   });
 }

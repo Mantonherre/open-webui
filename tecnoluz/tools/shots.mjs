@@ -40,12 +40,12 @@ await page.screenshot({ path: `${OUT}03-estela.png` });
 const h = await page.evaluate(() => document.body.scrollHeight);
 console.log('scrollHeight', h);
 let i = 4;
-for (const p of [0.25, 0.5, 0.78]) {
+for (const p of [0.2, 0.31, 0.5, 0.78]) {
   await page.evaluate((y) => window.scrollTo(0, y), Math.round(h * p));
   await page.waitForTimeout(1200);
   await page.mouse.move(700 + p * 300, 430 + p * 120, { steps: 16 });
   await page.waitForTimeout(700);
-  await page.screenshot({ path: `${OUT}0${i++}-cap-${p}.png` });
+  await page.screenshot({ path: `${OUT}${String(i++).padStart(2,'0')}-cap-${p}.png` });
 }
 
 const fps = await page.evaluate(

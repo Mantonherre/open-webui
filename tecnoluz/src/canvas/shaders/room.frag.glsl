@@ -17,6 +17,7 @@ uniform float uAmbient;    // luz de base: nunca negro absoluto
 uniform float uGain;
 uniform float uTime;
 uniform float uReveal;     // entrada desde negro del preloader
+uniform float uDip;        // caída a negro al cruzar de una estancia a otra
 uniform vec3  uBrasa;
 uniform vec2  uResolution;
 
@@ -47,7 +48,7 @@ void main() {
   // Dithering: sin esto, una escena oscura hace banding y se lee barata.
   col += (hash12(vUv * uResolution + 17.0) - 0.5) / 255.0;
 
-  col *= uReveal;
+  col *= uReveal * uDip;
 
   gl_FragColor = vec4(col, 1.0);
 }

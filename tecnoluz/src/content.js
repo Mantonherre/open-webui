@@ -43,6 +43,6 @@ export const rooms = [
   },
 ].map((r) => ({
   ...r,
-  off: `/rooms/${r.id}-off.jpg`,
-  on: `/rooms/${r.id}-on.jpg`,
+  off: `/rooms/${r.id}-off.webp`,
+  on: `/rooms/${r.id}-on.webp`,
 }));

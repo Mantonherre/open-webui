@@ -95,6 +95,7 @@ export class Scene {
         uGain: { value: 1.15 },
         uTime: { value: 0 },
         uReveal: { value: 0 },
+        uDip: { value: 1 },
         uBrasa: { value: BRASA },
         uResolution: { value: new THREE.Vector2(1, 1) },
       },
