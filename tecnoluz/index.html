@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Tecnoluz — La casa te espera a oscuras</title>
+    <meta
+      name="description"
+      content="Iluminación residencial en Elche. Enciende la casa con el cursor."
+    />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/display.woff2" crossorigin />
+  </head>
+  <body>
+    <div class="preloader" data-preloader>
+      <div class="preloader__inner">
+        <p class="preloader__label" data-preload-label>0</p>
+        <div class="preloader__bar"><span data-preload-bar></span></div>
+      </div>
+    </div>
+
+    <canvas class="scene" data-scene></canvas>
+
+    <main class="dom">
+      <section class="chapter chapter--intro" data-chapter="0">
+        <h1 class="intro__title">
+          La casa te espera <em>a oscuras.</em>
+        </h1>
+        <p class="intro__hint" data-hint>Mueve el cursor. Enciende.</p>
+      </section>
+    </main>
+
+    <footer class="outro" data-outro>
+      <p class="outro__claim">Encendemos tu casa.</p>
+      <a class="outro__tel" href="tel:+34966227525">966 227 525</a>
+      <p class="outro__meta">info@tecnoluz.com · Elche, Alicante</p>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

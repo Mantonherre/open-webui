@@ -1,0 +1,32 @@
+/* Una familia + un acento. Nada más. */
+:root {
+  /* Color */
+  --noche: #070a12;
+  --noche-suave: #0e1421;
+  --brasa: #e8a84c;
+  --brasa-viva: #f5c97c;
+  --lino: #f0e9dc;
+  --lino-tenue: #8d8577;
+
+  /* Tipografía */
+  --display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --ui: "Archivo", system-ui, -apple-system, sans-serif;
+
+  /* Escala: contraste real, no una progresión tímida */
+  --t-hero: clamp(2.75rem, 8.5vw, 8.5rem);
+  --t-chapter: clamp(2rem, 5vw, 4.5rem);
+  --t-body: 1rem;
+  --t-micro: 0.6875rem;
+
+  /* Duraciones — los números del oficio */
+  --d-micro: 180ms;
+  --d-estado: 560ms;
+  --d-cine: 1100ms;
+
+  /* Curvas, nombradas */
+  --e-entra: cubic-bezier(0.16, 1, 0.3, 1); /* ≈ expo.out */
+  --e-entre: cubic-bezier(0.65, 0, 0.35, 1); /* ≈ power3.inOut */
+
+  /* Espaciado */
+  --margen: clamp(1.25rem, 4vw, 4rem);
+}
